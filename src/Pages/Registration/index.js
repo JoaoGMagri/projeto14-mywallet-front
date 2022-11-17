@@ -7,39 +7,35 @@ import axios from "axios";
 
 export default function Registration() {
 
+    const URL = "http://localhost:5000/sing-up" 
+
     const navigate = useNavigate();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [password2, setPassword2] = useState("");
+    const [repeat_password, setRepeat_Password] = useState("");
     const [block, setBlock] = useState(false);
 
     function finish() {
 
-        if (password !== password2) {
-            alert("Insira as duas senhas iguais");
-            return;
-        }
-
         setBlock(true)
         const obj = {
-            email: email,
-            name: name,
-            password: password
+            email,
+            name,
+            password,
+            repeat_password
         }
 
-        alert("Deu tudo certo");
-        navigate("/");
-
-        /* const promise = axios.post(URL, obj);
+        const promise = axios.post(URL, obj);
         promise.then((res) => {
             navigate("/");
         });
         promise.catch((err) => {
             setBlock(false);
-            alert(err.response.data.message);
-        }); */
+            alert(err.message);
+            window.location.reload();
+        });
 
     }
 
@@ -79,7 +75,7 @@ export default function Registration() {
                 <InputField
                     type="password"
                     placeholder="Confirme a senha"
-                    onChange={(item) => setPassword2(item.target.value)}
+                    onChange={(item) => setRepeat_Password(item.target.value)}
                     disabled={block}
                     required
                 />
