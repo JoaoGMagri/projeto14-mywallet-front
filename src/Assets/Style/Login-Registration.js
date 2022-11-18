@@ -46,10 +46,6 @@ export const InputField = styled.input`
     font-weight: 400;
     font-size: 18px;
 
-    ::placeholder{
-        color: #DBDBDB;
-    }
-
 `;
 
 export const ButtonField = styled.button`

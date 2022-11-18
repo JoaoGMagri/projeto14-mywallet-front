@@ -8,7 +8,7 @@ import axios from "axios";
 export default function Login() {
 
     const navigate = useNavigate();
-
+    const URL = "http://localhost:5000/sing-in" 
     const { setToken } = useContext(AuthContext);
 
     const [email, setEmail] = useState("");
@@ -27,7 +27,7 @@ export default function Login() {
         promise.then((res) => {
             setToken(res.data.token);
 
-            navigate("/");
+            navigate("/main");
         });
 
         promise.catch((err) => {
