@@ -59,7 +59,7 @@ export const ButtonField = styled.button`
     background: #e03e35;
     border: 0px solid;
     border-radius: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 
     font-family: 'Lexend Deca';
     font-style: normal;

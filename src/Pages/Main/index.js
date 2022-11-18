@@ -12,7 +12,7 @@ export default function Main() {
 
     const { token } = useContext(AuthContext);
     const navigate = useNavigate();
-    console.log(token);
+
     function exitAPP() {
 
         const URL = "http://localhost:5000/go-out" 
@@ -52,7 +52,7 @@ export default function Main() {
 
             <ContainerAdd>
 
-                <Link to="/">
+                <Link to="/novaEntrada">
                     <Button>
                         <img src={entry} alt="" />
                         <Text>
@@ -61,7 +61,7 @@ export default function Main() {
                         </Text>
                     </Button>
                 </Link>
-                <Link to="/">
+                <Link to="/novaSaida">
                     <Button>
                         <img src={exit} alt="" />
                         <Text>
