@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios";
 
 import { AuthContext } from "../../Contexts/auth"
 import imageExit from "../../Assets/Images/Exit.png"
@@ -11,18 +12,42 @@ export default function Main() {
 
     const { token } = useContext(AuthContext);
     const navigate = useNavigate();
+    console.log(token);
+    function exitAPP() {
+
+        const URL = "http://localhost:5000/go-out" 
+
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }
+
+        const promise = axios.delete(URL, config);
+
+        promise.then((res) => {
+            console.log(res);
+            navigate("/");
+            window.location.reload();
+        });
+        promise.catch((err) => {
+            console.log(err.responde.data);
+            navigate("/");
+            window.location.reload();
+        });
+
+    }
 
     return (
         <ContainerMain>
             <Top>
                 Olá, Fulano
-                <Link to="/">
-                    <img src={imageExit} alt="" />
-                </Link>
+                <img src={imageExit} alt="" onClick={exitAPP} />
             </Top>
 
             <Records>
                 Não há registros de entrada ou saída
+                {token}
             </Records>
 
             <ContainerAdd>

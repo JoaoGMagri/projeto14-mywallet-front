@@ -25,7 +25,7 @@ export default function Login() {
 
         const promise = axios.post(URL, obj);
         promise.then((res) => {
-            setToken(res.data.token);
+            setToken(res.data);
 
             navigate("/main");
         });
