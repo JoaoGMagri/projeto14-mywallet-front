@@ -41,7 +41,6 @@ export const InputField = styled.input`
     border-radius: 5px;
     margin-bottom: 15px;
 
-    font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -61,9 +60,8 @@ export const ButtonField = styled.button`
     border-radius: 5px;
     margin-bottom: 10px;
 
-    font-family: 'Lexend Deca';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 20.976px;
     color: #FFFFFF;
 
@@ -71,10 +69,10 @@ export const ButtonField = styled.button`
 
 export const SpanField = styled.span`
     
-    font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: bold;
 
+    font-weight: 700;
     font-size: 15px;
     text-decoration-line: underline;
     color: #e03e35;

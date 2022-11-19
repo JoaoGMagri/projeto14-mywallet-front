@@ -148,6 +148,11 @@ const Top = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    color: #FFFFFF;
+
     margin-bottom: 23px;
 `;
 const Records = styled.div`
@@ -205,6 +210,11 @@ const Button = styled.div`
     background-color:red;
     border: 0px solid #FFFFFF;
     border-radius: 5px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    color: #FFFFFF;
 
     display: flex;
     align-items: flex-start;
